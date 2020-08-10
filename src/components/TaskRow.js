@@ -1,8 +1,13 @@
-import React from 'react:';
+import React from 'react';
 
 export const TaskRow = props => (
-    <tr>
-        <td></td>
-        <td></td>
+    <tr key={props.task.name}>
+        <td>{props.task.name}</td>
+        <td>
+            <input 
+            type="checkbox" 
+            checked={props.task.done} 
+            onChange={() => props.toggleTask(props.task)}/>
+        </td>
     </tr>
 );
